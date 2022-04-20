@@ -40,6 +40,8 @@ public class TestCollectionAPI4 {
 		for(Integer x:mymap.keySet()) {
 			System.out.println(mymap.get(x));
 		}
+		
+		
 
 	}
 
