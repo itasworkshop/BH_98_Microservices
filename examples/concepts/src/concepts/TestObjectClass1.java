@@ -54,6 +54,11 @@ class Employee{
 }
 
 public class TestObjectClass1{
+	
+	public static Student[] studentSorter(Student[] st) {
+		return st;
+		
+	}
 
 	public static void main(String[] args) {
 		Employee emp1 = new Employee(101,"Rajesh");
