@@ -2,16 +2,16 @@ package concepts;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Objects;
 
-//Comparable Interface --> for sorting purpose
-//you have to change User class itself
+//Comparator --> sorting when we can not change User class
 
-class User implements Comparable{
+class User1 {
 	private int id;
 	private String name;
 	
-	public User(int id, String name) {
+	public User1(int id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -51,46 +51,49 @@ class User implements Comparable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		User other = (User) obj;
+		User1 other = (User1) obj;
 		return id == other.id && Objects.equals(name, other.name);
 	}
-
-	@Override
-	public int compareTo(Object o) {
-		return this.getName().compareTo(((User) o).getName());
-	}
-	
 	
 	
 }
 
-public class TestComparable {
+class MyUserComparator implements Comparator{
+
+	@Override
+	/*
+	public int compare(Object o1, Object o2) {
+		return ((User1) o1).getName().compareTo(((User1) o2).getName());
+	}*/
+	
+	public int compare(Object o1, Object o2) {
+		if(((User1) o1).getId() > ((User1) o2).getId()){
+			return 2;
+		}else if (((User1) o1).getId() < ((User1) o2).getId()) {
+			return -2;
+		}else {
+			return 0;
+		}
+	}
+}
+public class TestComparator {
 
 	public static void main(String[] args) {
-		User u1 = new User(101,"Rajesh");
-		User u2 = new User(102,"Suraj");
-		User u3 = new User(103,"Adam");
+		User1 u1 = new User1(121,"Rajesh");
+		User1 u2 = new User1(92,"Suraj");
+		User1 u3 = new User1(103,"Adam");
 		
 		
-		ArrayList<User> mylist = new ArrayList<User>();
+		ArrayList<User1> mylist = new ArrayList<User1>();
 		mylist.add(u3);
 		mylist.add(u2);
 		mylist.add(u1);
 		
-		ArrayList<Integer> mylist2 = new ArrayList<Integer>();
-		
-		mylist2.add(20);
-		mylist2.add(30);
-		mylist2.add(7);
-		mylist2.add(3);
-		
 		System.out.println(mylist);
 		
-		Collections.sort(mylist);
+		Collections.sort(mylist,new MyUserComparator());
 		
 		System.out.println(mylist);
-		
-		
 	}
 
 }
