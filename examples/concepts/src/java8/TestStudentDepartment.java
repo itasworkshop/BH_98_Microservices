@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 class Student3{
 	private int id;
 	private String name;
-	private int dept_id;
+	private int dept_id; //create department as object
 	private int cmarks,pmarks,mmarks;
 	
 	public Student3(int id, String name, int dept_id, int cmarks, int pmarks, int mmarks) {
