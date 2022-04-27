@@ -1,0 +1,6 @@
+Spring Boot
+
+MVC --> Model,View and Controller
+Model --> database
+View --> user facing
+Controller --> path --> response

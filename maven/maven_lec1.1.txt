@@ -1,0 +1,6 @@
+Maven --> Build Tool
+
+java file --> compilation --> class file --> JAR(java archiver)
+
+building your project --> built --> JAR
+
