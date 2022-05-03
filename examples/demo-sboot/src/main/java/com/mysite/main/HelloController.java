@@ -25,5 +25,7 @@ public class HelloController {
 	String myStudentIntro(@PathVariable String name,@PathVariable Long id) {
 		return "Hello this is "+name +" and my id is "+id;
 	}
+	
+	
 
 }
