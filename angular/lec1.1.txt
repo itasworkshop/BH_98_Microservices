@@ -1,0 +1,16 @@
+Angular GUI setup
+
+1. Download node js 
+https://nodejs.org/en/download/
+
+2. verify if you have node and npm setup
+
+node -v
+npm -v
+
+3. Get Angular CLI(ng) 
+npm install -g @angular/cli
+
+4. Open cmd at you deisred folder where you want to create project
+
+ng new my-app
